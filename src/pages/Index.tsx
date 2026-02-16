@@ -1,12 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import enhancedPortrait from "@/assets/enhanced-portrait.png";
 
 const Index = () => {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = enhancedPortrait;
+    link.download = "enhanced-portrait.png";
+    link.click();
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="flex min-h-screen flex-col items-center justify-center gap-6 bg-background p-8">
+      <h1 className="text-2xl font-semibold text-foreground">Enhanced Portrait</h1>
+      <img
+        src={enhancedPortrait}
+        alt="Enhanced vintage portrait"
+        className="max-h-[70vh] rounded-lg shadow-xl"
+      />
+      <button
+        onClick={handleDownload}
+        className="rounded-lg bg-primary px-6 py-3 text-primary-foreground transition-opacity hover:opacity-90"
+      >
+        Download Image
+      </button>
     </div>
   );
 };
