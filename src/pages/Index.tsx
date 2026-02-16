@@ -39,6 +39,7 @@ const Index = () => {
       audioRef.current.pause();
     } else {
       audioRef.current.volume = 1.0;
+      audioRef.current.loop = true;
       audioRef.current.play();
     }
     setIsPlaying(!isPlaying);
